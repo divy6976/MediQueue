@@ -1,9 +1,7 @@
 import dotenv from "dotenv";
-dotenv.config();
+import { getDatabaseUrl } from "./src/config/databaseUrl";
 
-declare const process: {
-  env: Record<string, string | undefined>;
-};
+dotenv.config();
 
 type DrizzleConfig = {
   schema: string;
@@ -17,6 +15,6 @@ export default {
   out: "./drizzle",
   dialect: "postgresql",
   dbCredentials: {
-    url: process.env.DATABASE_URL!,
+    url: getDatabaseUrl(),
   },
 } satisfies DrizzleConfig;

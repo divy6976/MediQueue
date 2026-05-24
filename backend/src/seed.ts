@@ -247,7 +247,7 @@ async function ensureToken(t: SeedToken, patientId: number) {
   return { created: true };
 }
 
-async function main() {
+export async function runSeed() {
   let createdUsers = 0;
   let createdPatients = 0;
   let createdTokens = 0;
@@ -276,8 +276,10 @@ async function main() {
   );
 }
 
-main().catch((err) => {
-  console.error("Seed failed:", err);
-  process.exitCode = 1;
-});
+if (require.main === module) {
+  runSeed().catch((err) => {
+    console.error("Seed failed:", err);
+    process.exitCode = 1;
+  });
+}
 

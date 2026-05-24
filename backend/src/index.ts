@@ -6,6 +6,7 @@ import tokenRoutes from "./routes/token.routes";
 import queueRoutes from "./routes/queue.routes";
 import userRoutes from "./routes/user.routes";
 import adminRoutes from "./routes/admin.routes";
+import { bootstrapDb } from "./bootstrapDb";
 import "./events/queueSubscriber";
 dotenv.config();
 
@@ -28,6 +29,17 @@ app.use("/token", tokenRoutes);
 app.use("/queue", queueRoutes);
 app.use("/user", userRoutes);
 app.use("/admin", adminRoutes);
-app.listen(port, () => {
-  console.log(`MediQueue server is running on port ${port}`);
-});
+
+async function start() {
+  try {
+    await bootstrapDb();
+  } catch (err) {
+    console.error("[db] bootstrap failed (server will still start):", err);
+  }
+
+  app.listen(port, () => {
+    console.log(`MediQueue server is running on port ${port}`);
+  });
+}
+
+void start();
