@@ -61,7 +61,9 @@ export async function suggestTriageWithGemini(
         temperature: 0.2,
         maxOutputTokens: 256,
         responseMimeType: "application/json",
-        responseJsonSchema: zodToJsonSchema(triageSuggestSchema) as Record<string, unknown>,
+        responseJsonSchema: zodToJsonSchema(
+          triageSuggestSchema as unknown as Parameters<typeof zodToJsonSchema>[0]
+        ) as Record<string, unknown>,
       },
     });
 
