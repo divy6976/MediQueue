@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" width="900" height="520">
+  <rect width="900" height="520" fill="#0f0f0f"/>
+  <text x="20" y="28" fill="#888888" font-family="Segoe UI, Arial, sans-serif" font-size="13">System Architecture</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9cf5"/>
+    </marker>
+  </defs>
+
+  <!-- Clients -->
+  <text x="40" y="60" fill="#666666" font-family="Segoe UI, Arial, sans-serif" font-size="11">Clients</text>
+  <rect x="30" y="70" width="110" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="85" y="93" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Reception</text>
+  <rect x="30" y="118" width="110" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="85" y="141" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Doctor Panel</text>
+  <rect x="30" y="166" width="110" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="85" y="189" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Display Board</text>
+  <rect x="30" y="214" width="110" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="85" y="237" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Patient Track</text>
+  <rect x="30" y="262" width="110" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="85" y="285" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Admin</text>
+
+  <!-- Backend chain -->
+  <line x1="140" y1="166" x2="195" y2="166" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="195" y="70" width="100" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="245" y="93" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Routes</text>
+  <line x1="295" y1="88" x2="330" y2="88" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="330" y="70" width="110" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="385" y="93" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Controllers</text>
+  <line x1="440" y1="88" x2="475" y2="88" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="475" y="70" width="130" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="540" y="93" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">App Flows</text>
+  <line x1="605" y1="88" x2="640" y2="88" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="640" y="70" width="100" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="690" y="93" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Services</text>
+
+  <!-- Data layer -->
+  <line x1="690" y1="106" x2="690" y2="200" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="620" y="200" width="140" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="690" y="227" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">PostgreSQL</text>
+
+  <line x1="690" y1="244" x2="690" y2="290" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="620" y="290" width="140" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="690" y="317" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">Redis Pub/Sub</text>
+
+  <line x1="620" y1="312" x2="480" y2="380" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="380" y="360" width="130" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="445" y="387" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">SSE Broadcast</text>
+  <line x1="380" y1="382" x2="140" y2="184" stroke="#5b9cf5" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Gemini -->
+  <line x1="140" y1="88" x2="195" y2="88" stroke="#5b9cf5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="195" y="140" width="100" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="245" y="163" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Gemini AI</text>
+  <line x1="140" y1="88" x2="195" y2="158" stroke="#666666" stroke-width="1.5"/>
+</svg>

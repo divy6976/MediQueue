@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" width="700" height="320">
+  <rect width="700" height="320" fill="#0f0f0f"/>
+  <text x="20" y="28" fill="#888888" font-family="Segoe UI, Arial, sans-serif" font-size="13">Priority Queue Logic</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9cf5"/>
+    </marker>
+  </defs>
+
+  <rect x="200" y="50" width="300" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="350" y="77" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">Fetch WAITING tokens for department</text>
+
+  <line x1="350" y1="94" x2="350" y2="120" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="250" y="120" width="200" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="350" y="147" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">Compare priority</text>
+
+  <line x1="250" y1="164" x2="100" y2="200" stroke="#666666" stroke-width="1.5"/>
+  <rect x="30" y="190" width="170" height="36" rx="6" fill="#1a1a1a" stroke="#ff5252" stroke-width="1.5"/>
+  <text x="115" y="213" fill="#ff5252" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">EMERGENCY first</text>
+
+  <line x1="350" y1="164" x2="350" y2="200" stroke="#666666" stroke-width="1.5"/>
+  <rect x="265" y="190" width="170" height="36" rx="6" fill="#1a1a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="350" y="213" fill="#ffb74d" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">SENIOR before NORMAL</text>
+
+  <line x1="450" y1="164" x2="580" y2="200" stroke="#666666" stroke-width="1.5"/>
+  <rect x="500" y="190" width="170" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="585" y="213" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Same ’ earlier wins</text>
+
+  <line x1="115" y1="226" x2="350" y2="260" stroke="#5b9cf5" stroke-width="1.5"/>
+  <line x1="350" y1="226" x2="350" y2="260" stroke="#5b9cf5" stroke-width="1.5"/>
+  <line x1="585" y1="226" x2="350" y2="260" stroke="#5b9cf5" stroke-width="1.5"/>
+  <line x1="350" y1="260" x2="350" y2="275" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="230" y="275" width="240" height="36" rx="6" fill="#1a1a1a" stroke="#4caf50" stroke-width="1.5"/>
+  <text x="350" y="298" fill="#4caf50" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">Sorted queue returned</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 120" width="900" height="120">
+  <rect width="900" height="120" fill="#0f0f0f"/>
+  <text x="20" y="28" fill="#888888" font-family="Segoe UI, Arial, sans-serif" font-size="13">Token Number Generation</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9cf5"/>
+    </marker>
+  </defs>
+
+  <rect x="20" y="60" width="120" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="80" y="87" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">createToken</text>
+
+  <line x1="140" y1="82" x2="170" y2="82" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="170" y="60" width="150" height="44" rx="6" fill="#1a1a1a" stroke="#ff9800" stroke-width="1.5"/>
+  <text x="245" y="87" fill="#ff9800" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Advisory lock</text>
+
+  <line x1="320" y1="82" x2="350" y2="82" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="350" y="60" width="150" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="425" y="87" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Fetch last token</text>
+
+  <line x1="500" y1="82" x2="530" y2="82" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="530" y="60" width="120" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="590" y="87" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Increment</text>
+
+  <line x1="650" y1="82" x2="680" y2="82" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="680" y="60" width="160" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="760" y="87" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">DEPT-001 format</text>
+</svg>

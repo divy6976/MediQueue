@@ -1,0 +1,20 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1776499714364,
+      "tag": "0000_even_gladiator",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1776531232314,
+      "tag": "0001_remove-doctor-id-from-tokens",
+      "breakpoints": true
+    }
+  ]
+}

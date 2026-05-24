@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 200" width="900" height="200">
+  <rect width="900" height="200" fill="#0f0f0f"/>
+  <text x="20" y="28" fill="#888888" font-family="Segoe UI, Arial, sans-serif" font-size="13">Token Status Lifecycle</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9cf5"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="90" width="100" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="80" y="117" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">waiting</text>
+
+  <line x1="130" y1="112" x2="165" y2="112" stroke="#666666" stroke-width="1.5"/>
+  <rect x="165" y="98" width="120" height="28" rx="14" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="225" y="116" fill="#cccccc" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Doctor calls next</text>
+
+  <line x1="285" y1="112" x2="320" y2="112" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="320" y="90" width="130" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="385" y="117" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">IN_PROGRESS</text>
+
+  <line x1="450" y1="100" x2="490" y2="70" stroke="#666666" stroke-width="1.5"/>
+  <rect x="490" y="52" width="130" height="28" rx="14" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="555" y="70" fill="#cccccc" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Consultation complete</text>
+  <line x1="620" y1="70" x2="660" y2="70" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="660" y="48" width="80" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="700" y="75" fill="#4caf50" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">DONE</text>
+
+  <line x1="450" y1="124" x2="490" y2="154" stroke="#666666" stroke-width="1.5"/>
+  <rect x="490" y="136" width="100" height="28" rx="14" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="540" y="154" fill="#cccccc" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="middle">Patient absent</text>
+  <line x1="590" y1="154" x2="660" y2="154" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="660" y="132" width="100" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="710" y="159" fill="#ff9800" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">SKIPPED</text>
+
+  <line x1="30" y1="112" x2="10" y2="112" stroke="#666666" stroke-width="1.5"/>
+  <rect x="165" y="98" width="0" height="0" fill="none"/>
+  <text x="10" y="106" fill="#666666" font-family="Segoe UI, Arial, sans-serif" font-size="11" text-anchor="end">Token generated</text>
+</svg>

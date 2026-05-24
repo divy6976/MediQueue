@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 120" width="700" height="120">
+  <rect width="700" height="120" fill="#0f0f0f"/>
+  <text x="20" y="28" fill="#888888" font-family="Segoe UI, Arial, sans-serif" font-size="13">Priority Order</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9cf5"/>
+    </marker>
+  </defs>
+  <rect x="30" y="60" width="160" height="44" rx="6" fill="#1a1a1a" stroke="#ff5252" stroke-width="1.5"/>
+  <text x="110" y="87" fill="#ff5252" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">EMERGENCY (3)</text>
+  <line x1="190" y1="82" x2="230" y2="82" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="230" y="60" width="140" height="44" rx="6" fill="#1a1a1a" stroke="#ffb74d" stroke-width="1.5"/>
+  <text x="300" y="87" fill="#ffb74d" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">SENIOR (2)</text>
+  <line x1="370" y1="82" x2="410" y2="82" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="410" y="60" width="140" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="480" y="87" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="14" text-anchor="middle">NORMAL (1)</text>
+  <text x="580" y="87" fill="#666666" font-family="Segoe UI, Arial, sans-serif" font-size="12">highest first ’</text>
+</svg>

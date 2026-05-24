@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 260" width="900" height="260">
+  <rect width="900" height="260" fill="#0f0f0f"/>
+  <text x="20" y="28" fill="#888888" font-family="Segoe UI, Arial, sans-serif" font-size="13">Real-Time Updates</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5b9cf5"/>
+    </marker>
+  </defs>
+
+  <rect x="30" y="60" width="150" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="105" y="83" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Patient registered</text>
+  <rect x="30" y="108" width="150" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="105" y="131" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Call next</text>
+  <rect x="30" y="156" width="150" height="36" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="105" y="179" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="12" text-anchor="middle">Complete / Skip</text>
+
+  <line x1="180" y1="126" x2="230" y2="126" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="230" y="104" width="160" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="310" y="131" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">notifyQueueUpdate</text>
+
+  <line x1="390" y1="126" x2="440" y2="126" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="440" y="104" width="170" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="525" y="131" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Redis PUBLISH</text>
+
+  <line x1="610" y1="126" x2="660" y2="126" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="660" y="104" width="160" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="740" y="131" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">queueSubscriber</text>
+
+  <line x1="740" y1="148" x2="740" y2="185" stroke="#5b9cf5" stroke-width="2" marker-end="url(#arrow)"/>
+  <rect x="660" y="185" width="160" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="740" y="212" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">sseStore.broadcast</text>
+
+  <line x1="660" y1="207" x2="310" y2="220" stroke="#5b9cf5" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <rect x="200" y="200" width="120" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="260" y="227" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Display Board</text>
+  <rect x="340" y="200" width="120" height="44" rx="6" fill="#1a1a1a" stroke="#555555" stroke-width="1.5"/>
+  <text x="400" y="227" fill="#e8e8e8" font-family="Segoe UI, Arial, sans-serif" font-size="13" text-anchor="middle">Doctor Panel</text>
+</svg>
