@@ -1,14 +1,15 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import express from "express";
 import cors from "cors";
-import dotenv from "dotenv";
 import patientRoutes from "./routes/patient.routes";
 import tokenRoutes from "./routes/token.routes";
 import queueRoutes from "./routes/queue.routes";
 import userRoutes from "./routes/user.routes";
 import adminRoutes from "./routes/admin.routes";
-import { bootstrapDb } from "./bootstrapDb";
+import { bootstrapDb, checkDbHealth } from "./bootstrapDb";
 import "./events/queueSubscriber";
-dotenv.config();
 
 if (!process.stdin.isTTY) {
   process.stdin.resume();
@@ -20,8 +21,25 @@ app.use(cors());
 app.use(express.json());
 const port = process.env.PORT || 3001;
 
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
   res.send("MediQueue server is running");
+});
+
+app.get("/health/db", async (_req, res) => {
+  const health = await checkDbHealth();
+  res.status(health.ok ? 200 : 503).json(health);
+});
+
+/** One-time setup — open in browser if tables missing (Render free tier has no Shell). */
+app.get("/setup-db", async (_req, res) => {
+  try {
+    const result = await bootstrapDb();
+    res.json({ message: "Database ready", ...result });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("[setup-db]", err);
+    res.status(500).json({ message: "Database setup failed", error: message });
+  }
 });
 
 app.use("/patient", patientRoutes);
@@ -32,9 +50,13 @@ app.use("/admin", adminRoutes);
 
 async function start() {
   try {
-    await bootstrapDb();
+    const result = await bootstrapDb();
+    console.log(`[db] startup bootstrap OK (${result.doctors} doctors)`);
   } catch (err) {
-    console.error("[db] bootstrap failed (server will still start):", err);
+    console.error("[db] startup bootstrap FAILED:", err);
+    console.error(
+      "[db] Fix: set DATABASE_URL on Render (Postgres Internal URL), then open GET /setup-db"
+    );
   }
 
   app.listen(port, () => {

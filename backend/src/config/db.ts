@@ -1,16 +1,20 @@
-import { drizzle } from "drizzle-orm/node-postgres";
-import { Pool } from "pg";
 import dotenv from "dotenv";
-import { getDatabaseUrl, usePgSsl } from "./databaseUrl";
 
 dotenv.config();
 
-const connectionString = getDatabaseUrl();
-const pool = new Pool({
-  connectionString,
-  ssl: usePgSsl(connectionString) ? { rejectUnauthorized: false } : undefined,
-});
+import { drizzle } from "drizzle-orm/node-postgres";
+import { Pool } from "pg";
+import { getDatabaseUrl, usePgSsl } from "./databaseUrl";
 
+function createPool() {
+  const connectionString = getDatabaseUrl();
+  return new Pool({
+    connectionString,
+    ssl: usePgSsl(connectionString) ? { rejectUnauthorized: false } : undefined,
+  });
+}
+
+const pool = createPool();
 const db = drizzle(pool);
 
 export { db, pool };
