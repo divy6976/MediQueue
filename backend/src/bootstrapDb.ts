@@ -1,6 +1,7 @@
 import { Pool } from "pg";
 import { getDatabaseUrl, usePgSsl } from "./config/databaseUrl";
 import { runSeed } from "./seed";
+import { formatError, getDatabaseUrlHint } from "./utils/formatError";
 
 const SETUP_STATEMENTS = [
   `CREATE TABLE IF NOT EXISTS "users" (
@@ -101,8 +102,21 @@ export async function bootstrapDb(): Promise<{ ok: true; doctors: number }> {
 export async function checkDbHealth(): Promise<{
   ok: boolean;
   doctors?: number;
+  databaseUrlConfigured?: boolean;
+  databaseHost?: string | null;
   error?: string;
 }> {
+  const hint = getDatabaseUrlHint();
+  if (!hint.configured) {
+    return {
+      ok: false,
+      databaseUrlConfigured: false,
+      databaseHost: null,
+      error:
+        "DATABASE_URL is not set on Render. Add Postgres Internal Database URL in Web Service → Environment.",
+    };
+  }
+
   try {
     const connectionString = getDatabaseUrl();
     const pool = new Pool({
@@ -114,12 +128,21 @@ export async function checkDbHealth(): Promise<{
       const result = await pool.query(
         `SELECT count(*)::int AS n FROM "users" WHERE "role" = 'doctor'`
       );
-      return { ok: true, doctors: result.rows[0]?.n ?? 0 };
+      return {
+        ok: true,
+        doctors: result.rows[0]?.n ?? 0,
+        databaseUrlConfigured: true,
+        databaseHost: hint.host,
+      };
     } finally {
       await pool.end();
     }
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
-    return { ok: false, error: message };
+    return {
+      ok: false,
+      databaseUrlConfigured: hint.configured,
+      databaseHost: hint.host,
+      error: formatError(err),
+    };
   }
 }

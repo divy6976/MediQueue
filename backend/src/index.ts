@@ -9,6 +9,7 @@ import queueRoutes from "./routes/queue.routes";
 import userRoutes from "./routes/user.routes";
 import adminRoutes from "./routes/admin.routes";
 import { bootstrapDb, checkDbHealth } from "./bootstrapDb";
+import { formatError, getDatabaseUrlHint } from "./utils/formatError";
 import "./events/queueSubscriber";
 
 if (!process.stdin.isTTY) {
@@ -36,9 +37,18 @@ app.get("/setup-db", async (_req, res) => {
     const result = await bootstrapDb();
     res.json({ message: "Database ready", ...result });
   } catch (err) {
-    const message = err instanceof Error ? err.message : String(err);
+    const hint = getDatabaseUrlHint();
+    const message = formatError(err);
     console.error("[setup-db]", err);
-    res.status(500).json({ message: "Database setup failed", error: message });
+    res.status(500).json({
+      message: "Database setup failed",
+      error: message,
+      databaseUrlConfigured: hint.configured,
+      databaseHost: hint.host,
+      hint: hint.configured
+        ? "Check Render Logs. Postgres may be unreachable or seed failed."
+        : "Add DATABASE_URL in Render → MediQueue Web Service → Environment (Postgres Internal URL).",
+    });
   }
 });
 
